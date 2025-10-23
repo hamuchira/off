@@ -1,12 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第2回 はむオフ会 in 東京｜案内ページ</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700;800&display=swap');
-    
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700;800&amp;display=swap" rel="stylesheet"/>
+<title>第2回 はむオフ会 in 東京｜案内ページ</title>
+<meta content="website" property="og:type"/>
+<meta content="第2回 はむオフ会 in 東京｜案内ページ" property="og:title"/>
+<meta content="ニックネームOK・ビンゴ大会ありのゆる雑談オフ会。参加は簡単3ステップ！" property="og:description"/>
+<meta content="https://hamuchira.github.io/off/ogp.jpg" property="og:image"/>
+<meta content="https://hamuchira.github.io/off/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<style>
     :root{
       --bg: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 50%, #fff0f7 100%);
       --card:#ffffff;
@@ -405,202 +413,515 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+@media (prefers-reduced-motion: reduce) {
+  .event-badge, .hamster { animation: none !important; }
+  html, body { scroll-behavior: auto !important; }
+}
+
+/* FAQ styling normalization */
+#faq .card { background: transparent !important; box-shadow:none !important; border:none !important; }
+#faq .faq-item {
+  background: rgba(255,255,255,.9);
+  border-left: 4px solid var(--accent);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+/* FAQ width normalization */
+#faq .faq-item {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ===== FAQ Accordion (Q-only visible) ===== */
+#faq .card{ padding:0; background:transparent; box-shadow:none; border:none }
+#faq .faq-item{ margin:16px 0 }
+.faq-question{
+  width:100%; display:flex; align-items:center; gap:12px;
+  background: rgba(255,255,255,.95); border:1.5px solid var(--border-color);
+  border-radius: 14px; padding:16px 20px; cursor:pointer;
+  font-weight:700; color: var(--secondary); text-align:left;
+  box-shadow: 0 4px 10px rgba(255,107,157,.10);
+}
+.faq-question:hover{ background: rgba(255,107,157,.08); }
+.q-badge{
+  display:inline-grid; place-items:center;
+  width:28px; height:28px; border-radius:999px;
+  background: var(--accent); color:white; font-weight:800;
+}
+.q-text{ flex:1; font-size:18px; }
+.q-toggle{ font-size:20px; opacity:.8 }
+.faq-answer{
+  margin-top:6px; background: rgba(255,255,255,.92);
+  border-left:4px solid var(--accent); border-radius: 0 12px 12px 12px;
+  padding: 0 18px; max-height:0; overflow:hidden;
+  transition: max-height .35s ease, padding .25s ease;
+}
+.faq-item.open .faq-answer{ max-height: 800px; padding: 14px 18px; }
+.a-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.a-badge{ display:inline-grid; place-items:center; width:28px; height:28px; border-radius:999px; background:#ff6b9d1a; color:#ff6b9d; font-weight:800; border:1px solid #ff6b9d55; }
+#faq .faq-item p{ margin:0; color:var(--ink); }
+/* width normalization */
+#faq .faq-item, #faq .faq-question, #faq .faq-answer{ box-sizing:border-box; max-width:100%; }
+
+/* ===== v6 FAQ redesign: Q-row light pink, A white, no boxes/left bracket ===== */
+#faq .card{ padding:0; background:transparent; box-shadow:none; border:none }
+#faq .faq-item{ border:none; background:transparent; margin:12px 0; }
+#faq .faq-question{
+  width:100%; display:flex; align-items:center; gap:12px;
+  background:#ffe6ef; border:none; border-radius:10px;
+  padding:16px 20px; cursor:pointer; font-weight:700;
+  color:var(--secondary); text-align:left; transition:background .25s ease;
+  box-shadow:none;
+}
+#faq .faq-question:hover{ background:#ffd7e4; }
+#faq .q-badge{
+  background:#ff6b9d; color:#fff; width:28px; height:28px; border-radius:999px;
+  display:inline-grid; place-items:center; font-weight:800;
+}
+#faq .q-text{ flex:1; font-size:18px; }
+#faq .q-toggle{ font-size:20px; color:#b55b7a; font-weight:700; }
+#faq .faq-answer{
+  background:#fff; border:none; border-radius:0 0 10px 10px;
+  margin-top:2px; padding:0 18px; overflow:hidden; max-height:0;
+  transition:max-height .35s ease, padding .25s ease;
+}
+#faq .faq-item.open .faq-answer{ max-height:500px; padding:16px 18px; }
+#faq .a-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+#faq .a-badge{ color:#ff6b9d; font-weight:700; margin-right:6px; background:none; border:none; }
+#faq .faq-item, #faq .faq-question, #faq .faq-answer{ box-sizing:border-box; max-width:100%; }
+
+/* ===== v7 FAQ refine: tighter spacing + lavender tone ===== */
+#faq .faq-item{ border:none; background:transparent; margin:0; }
+#faq .faq-question{
+  width:100%; display:flex; align-items:center; gap:12px;
+  background:#f5f1ff; border:none; border-radius:0;
+  padding:14px 18px; cursor:pointer; font-weight:700;
+  color:#5e4b94; text-align:left; transition:background .25s ease;
+  box-shadow:none;
+}
+#faq .faq-question:hover{ background:#ece5ff; }
+#faq .faq-item:first-child .faq-question{ border-top-left-radius:10px; border-top-right-radius:10px; }
+#faq .faq-item:last-child .faq-question{ border-bottom-left-radius:10px; border-bottom-right-radius:10px; }
+#faq .q-badge{
+  background:#a58de0; color:#fff; width:26px; height:26px; border-radius:999px;
+  display:grid; place-items:center; font-weight:800; font-size:14px;
+}
+#faq .q-text{ flex:1; font-size:16.5px; }
+#faq .q-toggle{ font-size:18px; color:#8c7cc5; font-weight:700; }
+#faq .faq-answer{
+  background:#fff; border:none; border-radius:0;
+  margin:0; padding:0 18px; overflow:hidden; max-height:0;
+  transition:max-height .35s ease, padding .25s ease;
+  font-size:15px; color:#444;
+}
+#faq .faq-item.open .faq-answer{ max-height:500px; padding:12px 18px 16px; }
+
+/* ===== v8 FAQ: all-white, no boxes, tight spacing ===== */
+#faq .card{ padding:0; background:transparent; box-shadow:none; border:none }
+#faq .faq-item{ margin:0; }
+#faq .faq-item + .faq-item{ margin-top:4px; } /* minimal rhythm */
+#faq .faq-question{
+  width:100%; display:flex; align-items:center; gap:10px;
+  background:#faf9ff; /* almost white lavender */
+  border:none; border-radius:0;
+  padding:10px 14px; cursor:pointer; font-weight:700;
+  color:#5e4b94; text-align:left; box-shadow:none;
+}
+#faq .faq-question:hover{ background:#f2efff; }
+#faq .q-badge{
+  background:#a58de0; color:#fff; width:22px; height:22px; border-radius:999px;
+  display:grid; place-items:center; font-weight:800; font-size:12px;
+}
+#faq .q-text{ flex:1; font-size:16px; }
+#faq .q-toggle{ font-size:16px; color:#8c7cc5; font-weight:700; }
+#faq .faq-answer{
+  background:#fff; border:none; border-radius:0;
+  margin:0; padding:0 14px; overflow:hidden; max-height:0;
+  transition:max-height .28s ease, padding .2s ease;
+  font-size:15px; color:#333;
+}
+#faq .faq-item.open .faq-answer{ max-height:420px; padding:8px 14px 10px; }
+#faq .a-head{ display:none; } /* hide big 'A' row to reduce vertical footprint */
+
+/* ===== v9 FAQ: no boxes, all-white area, ultra-tight outside spacing ===== */
+section#faq, #faq { background:#fff !important; }
+#faq .card{ padding:0; background:#fff !important; box-shadow:none; border:none; }
+
+/* each item sits tightly; no big gaps between Q rows */
+#faq .faq-item{ margin:0; }
+#faq .faq-item + .faq-item{ margin-top: 2px; } /* ← 行間ほぼゼロ */
+
+#faq .faq-question{
+  background:#f3f0ff;           /* ごく薄いラベンダー（ほぼ白） */
+  border:none; border-radius:8px;
+  padding:12px 16px;
+  box-shadow:none;
+}
+
+/* A領域は白、余白もコンパクトに */
+#faq .faq-answer{
+  background:#fff;
+  padding:0 16px;
+}
+#faq .faq-item.open .faq-answer{
+  padding:8px 16px 10px;
+}
+
+/* 段落のデフォルト余白を詰める */
+#faq .faq-answer p{ margin:0 0 8px; }
+#faq .faq-answer p:last-child{ margin-bottom:0; }
+
+/* 見た目の連続性を高める（最初/最後だけ角丸） */
+#faq .faq-item:first-child .faq-question{ border-top-left-radius:10px; border-top-right-radius:10px; }
+#faq .faq-item:last-child .faq-question{ border-bottom-left-radius:10px; border-bottom-right-radius:10px; }
+
+/* ===== v13 FAQ: v10 design kept, spacing tightened like Tokyo Kobetsu ===== */
+#faq .faq-item {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+#faq .faq-item + .faq-item {
+  margin-top: 4px !important; /* 行間を最小化 */
+}
+#faq .faq-question {
+  margin-bottom: 0;
+}
+#faq .faq-answer {
+  margin-top: 0;
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+/* === v16 FAQ 修正版 === */
+.faq-item {
+  margin-bottom: 0.6em; /* 行間をv13比で半分程度に詰める */
+  border-radius: 12px;
+}
+.faq-question {
+  line-height: 1.3;
+  padding: 12px 16px;
+}
+.faq-answer {
+  line-height: 1.6;
+  padding: 12px 16px 16px 16px;
+}
+.faq-container {
+  margin-bottom: 24px; /* 全体下の余白を自然に */
+}
+</style>
+<script type="application/ld+json">{
+ "@context":"https://schema.org",
+ "@type":"Event",
+ "name":"第2回 はむオフ会 in 東京",
+ "startDate":"2026-02-15T13:00:00+09:00",
+ "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+ "eventStatus":"https://schema.org/EventScheduled",
+ "location":{"@type":"Place","name":"東京都内（詳細は参加者のみ）","address":{"@type":"PostalAddress","addressRegion":"東京都"}},
+ "image":"https://hamuchira.github.io/off/ogp.jpg",
+ "description":"ハムスター＆はむチラ好きのゆる雑談オフ会。ビンゴ大会あり。ニックネーム参加OK。",
+ "organizer":{"@type":"Organization","name":"もっと！はむチラ長屋ch.","url":"https://www.youtube.com/@hamuchira"},
+ "offers":{"@type":"Offer","price":"5500","priceCurrency":"JPY","availability":"https://schema.org/InStock"},
+ "endDate":"2026-02-15T16:00:00+09:00"
+}</script>
 </head>
 <body>
-  <div class="floating-hamsters">
-    <div class="hamster">🐹</div>
-    <div class="hamster">🐹</div>
-    <div class="hamster">🐹</div>
-  </div>
-
-  <header class="hero">
-    <div class="container hero-inner">
-      <div class="event-badges">
-        <div class="event-badge">
-          <span>🎉</span>
-          <span>第2回</span>
-        </div>
-        <div class="event-badge">
-          <span>🗼</span>
-          <span>東京</span>
-        </div>
-        <div class="event-badge">
-          <span>💬</span>
-          <span>ゆる雑談</span>
-        </div>
-      </div>
-      <h1>🐹 はむオフ会 in 東京</h1>
-      <p style="font-size: 16px; color: var(--secondary); font-weight: 600; margin: 8px 0 16px;">
-        主催：<a href="https://www.youtube.com/@hamuchira" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 2px solid var(--accent);">もっと！はむチラ長屋ch.</a>
-      </p>
-      <p class="lead">ハムスター＆はむチラ好きで集まって、ゆるくおしゃべりするオフ会です✨<br>ビンゴ大会もあります💕<br>参加はニックネームでOK！気軽にご参加ください♪</p>
-      <div style="background: rgba(142,68,173,.1); padding: 16px; border-radius: 12px; margin: 20px auto; max-width: 500px; border: 2px solid rgba(142,68,173,.3);">
-        <p style="margin: 0; font-size: 14px; color: var(--secondary); font-weight: 600;">
-          📺 <strong>「はむチラ」をまだご存知でない方は</strong><br>
-          <a href="https://www.youtube.com/@hamuchira" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: bold;">YouTubeチャンネル</a>をぜひチェックしてみてください！
+<div class="floating-hamsters">
+<div class="hamster">🐹</div>
+<div class="hamster">🐹</div>
+<div class="hamster">🐹</div>
+</div>
+<header class="hero">
+<div class="container hero-inner">
+<div class="event-badges">
+<div class="event-badge">
+<span>🎉</span>
+<span>第2回</span>
+</div>
+<div class="event-badge">
+<span>🗼</span>
+<span>東京</span>
+</div>
+<div class="event-badge">
+<span>💬</span>
+<span>ゆる雑談</span>
+</div>
+</div>
+<h1>🐹 はむオフ会 in 東京</h1>
+<p style="font-size: 16px; color: var(--secondary); font-weight: 600; margin: 8px 0 16px;">
+        主催：<a href="https://www.youtube.com/@hamuchira" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 2px solid var(--accent);" target="_blank">もっと！はむチラ長屋ch.</a>
+</p>
+<p class="lead">ハムスター＆はむチラ好きで集まって、ゆるくおしゃべりするオフ会です✨<br/>ビンゴ大会もあります💕<br/>参加はニックネームでOK！気軽にご参加ください♪</p>
+<div style="background: rgba(142,68,173,.1); padding: 16px; border-radius: 12px; margin: 20px auto; max-width: 500px; border: 2px solid rgba(142,68,173,.3);">
+<p style="margin: 0; font-size: 14px; color: var(--secondary); font-weight: 600;">
+          📺 <strong>「はむチラ」をまだご存知でない方は</strong><br/>
+<a href="https://www.youtube.com/@hamuchira" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: bold;" target="_blank">YouTubeチャンネル</a>をぜひチェックしてみてください！
         </p>
+</div>
+<div class="cta">
+<a class="btn btn-primary" href="https://form.run/@hamuchira" rel="noopener" target="_blank">🌟 参加申し込みフォームへ</a>
+<a class="btn btn-outline" href="#howto">📖 参加方法を見る</a>
+</div>
+<div class="hint">
+        ✨ フォーム送信後に、<a href="https://line.me/ti/g2/vedw-cLHaDm0TA3xCTqdLscQBiBDyJn9lM9czA?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" rel="noopener" style="color: var(--accent); font-weight: bold; text-decoration: underline;" target="_blank">オープンチャット</a>にご参加ください（承認制）
       </div>
-      <div class="cta">
-        <a class="btn btn-primary" href="https://form.run/@hamuchira" target="_blank" rel="noopener">🌟 参加申し込みフォームへ</a>
-        <a class="btn btn-outline" href="#howto">📖 参加方法を見る</a>
-      </div>
-      <div class="hint">
-        ✨ フォーム送信後に、<a href="https://line.me/ti/g2/vedw-cLHaDm0TA3xCTqdLscQBiBDyJn9lM9czA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" style="color: var(--accent); font-weight: bold; text-decoration: underline;">オープンチャット</a>にご参加ください（承認制）
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="section" id="about">
-      <div class="card">
-        <h2>開催概要</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <span class="info-icon">📅</span>
-            <strong>日付</strong><br>
+</div>
+</header>
+<main class="container">
+<section class="section" id="about">
+<div class="card">
+<h2>開催概要</h2>
+<div class="info-grid">
+<div class="info-item">
+<span class="info-icon">📅</span>
+<strong>日付</strong><br/>
             2026年<span style="border-bottom:2px dotted var(--accent)"> 2月15日 </span>（日）
           </div>
-          <div class="info-item">
-            <span class="info-icon">🕐</span>
-            <strong>時間</strong><br>
-            13:00 〜 予定
+<div class="info-item">
+<span class="info-icon">🕐</span>
+<strong>時間</strong><br/>
+            13:00〜16:00（2時間 or 2時間半目安）
           </div>
-          <div class="info-item">
-            <span class="info-icon">📍</span>
-            <strong>場所</strong><br>
-            東京都内<br>
-            <small>（詳細は参加者のみ）</small>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">💰</span>
-            <strong>参加費</strong><br>
-            5,500円前後<br>
-            <small>（お店やプラン次第）</small>
-          </div>
-          <div class="info-item" style="background: rgba(255,107,157,.15); border: 2px solid var(--accent);">
-            <span class="info-icon">⏰</span>
-            <strong style="color: var(--accent);">応募締切</strong><br>
-            2025年12月31日（火）<br>
-            <small style="color: var(--accent); font-weight: 600;">お早めに！</small>
-          </div>
-          <div class="info-item" style="background: rgba(142,68,173,.1); border: 2px solid var(--secondary);">
-            <span class="info-icon">📷</span>
-            <strong style="color: var(--secondary);"><a href="off202510.html" style="color: var(--secondary); text-decoration: none;">過去のオフ会</a></strong><br>
-            <a href="off202510.html" style="color: var(--accent); text-decoration: none; font-weight: 600;">第1回の様子はこちら →</a>
-          </div>
-        </div>
-        <div class="hint">
-          🍽️ <strong>飲食について：</strong>詳細は決まり次第お知らせします
-        </div>
-      </div>
-      
-      <div class="card" style="margin-top:20px;">
-        <h2>参加資格</h2>
-        <ul class="list">
-          <li>
-            <span>📺</span>
-            <div>
-              <strong>「もっと！はむチラ長屋ch.」をご存じの方</strong><br>
-              <small>チャンネルをご存知であればOKです</small>
-            </div>
-          </li>
-          <li>
-            <span>🐹</span>
-            <div>
-              <strong>ハムスター好きな方</strong><br>
-              <small>ハムちゃんへの愛があれば十分です！</small>
-            </div>
-          </li>
-        </ul>
-        
-        <h3 style="margin-top:24px; display: flex; align-items: center; gap: 8px;">
+<div class="info-item">
+<span class="info-icon">📍</span>
+<strong>場所</strong><br/>
+            東京都内<br/>
+<small>（詳細は参加者のみ）<br/><small>（渋谷、上野、池袋、銀座辺りを予定）</small></small>
+</div>
+<div class="info-item">
+<span class="info-icon">💰</span>
+<strong>参加費</strong><br/>
+            5,500円前後<br/>
+<small>（お店やプラン次第）</small>
+</div>
+<div class="info-item" style="background: rgba(255,107,157,.15); border: 2px solid var(--accent);">
+<span class="info-icon">⏰</span>
+<strong style="color: var(--accent);">応募締切</strong><br/>
+            2025年12月31日（水）<br/>
+<small style="color: var(--accent); font-weight: 600;">お早めに！</small>
+</div>
+<div class="info-item" style="background: rgba(142,68,173,.1); border: 2px solid var(--secondary);">
+<span class="info-icon">📷</span>
+<strong style="color: var(--secondary);"><a href="off202510.html" style="color: var(--secondary); text-decoration: none;">過去のオフ会</a></strong><br/>
+<a href="off202510.html" style="color: var(--accent); text-decoration: none; font-weight: 600;">第1回の様子はこちら →</a>
+</div>
+</div>
+<div class="hint">
+          🍽️ <strong>飲食について：</strong>昼食＋ドリンク飲み放題2～2.5h予定</div>
+</div>
+<div class="card" style="margin-top:20px;">
+<h2>参加資格</h2>
+<ul class="list">
+<li>
+<span>📺</span>
+<div>
+<strong>「もっと！はむチラ長屋ch.」をご存じの方</strong><br/>
+<small>チャンネルをご存知であればOKです</small>
+</div>
+</li>
+<li>
+<span>🐹</span>
+<div>
+<strong>ハムスター好きな方</strong><br/>
+<small>ハムちゃんへの愛があれば十分です！</small>
+</div>
+</li>
+</ul>
+<h3 style="margin-top:24px; display: flex; align-items: center; gap: 8px;">
           ⚠️ 参加時のお願い
         </h3>
-        <ul class="list">
-          <li>
-            <span class="badge">年齢</span>
-            <div>
-              義務教育以下の方は<strong>保護者の方の同伴が必須</strong>です
-            </div>
-          </li>
-          <li>
-            <span class="badge">年齢</span>
-            <div>
-              高校生以上〜18歳未満の方は<strong>必ず保護者の方の了承を得てからご参加</strong>ください
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="howto">
-      <div class="card">
-        <h2>参加方法</h2>
-        <div style="background: rgba(255,107,157,.1); padding: 24px; border-radius: 16px; margin-bottom: 20px;">
-          <h3 style="margin-top: 0; color: var(--secondary);">📝 簡単3ステップ！</h3>
-          <ol style="font-size: 16px; line-height: 1.8;">
-            <li><strong>フォーム入力</strong> → <a href="https://form.run/@hamuchira" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: bold;">参加申し込みフォーム</a> に必要事項を入力</li>
-            <li><strong>オープンチャット参加</strong> → フォーム送信後に表示される合言葉を記入し、<a href="https://line.me/ti/g2/vedw-cLHaDm0TA3xCTqdLscQBiBDyJn9lM9czA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: bold;">オープンチャット</a>に「参加申請」</li>
-            <li><strong>承認待ち</strong> → 主催がフォーム内容と照合し、承認後にオープンチャットで連絡・雑談スタート！</li>
-          </ol>
+<ul class="list">
+<li>
+<span>📍</span>
+<div>体調不良など、<strong>やむを得ないご事情</strong>以外での会場決定後のキャンセルは、できる限りお控えいただけますと幸いです。</div>
+</li>
+<li>
+<span>👧</span>
+<div>義務教育以下の方は<strong>保護者の方の同伴が必須</strong>です。</div>
+</li>
+<li>
+<span>🎓</span>
+<div>高校生以上〜18歳未満の方は<strong>保護者の方の了承を得てからご参加</strong>ください。</div>
+</li>
+</ul>
+</div>
+</section>
+<section class="section" id="howto">
+<div class="card">
+<h2>参加方法</h2>
+<div style="background: rgba(255,107,157,.1); padding: 24px; border-radius: 16px; margin-bottom: 20px;">
+<h3 style="margin-top: 0; color: var(--secondary);">📝 簡単3ステップ！</h3>
+<ol style="font-size: 16px; line-height: 1.8;">
+<li><strong>フォーム入力</strong> → <a href="https://form.run/@hamuchira" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: bold;" target="_blank">参加申し込みフォーム</a> に必要事項を入力</li>
+<li><strong>オープンチャット参加</strong> → フォーム送信後に表示される合言葉を記入し、<a href="https://line.me/ti/g2/vedw-cLHaDm0TA3xCTqdLscQBiBDyJn9lM9czA?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: bold;" target="_blank">オープンチャット</a>に「参加申請」</li>
+<li><strong>承認待ち</strong> → 主催がフォーム内容と照合し、承認後にオープンチャットで連絡・雑談スタート！</li>
+</ol>
+</div>
+<div class="cta">
+<a class="btn btn-primary" href="https://form.run/@hamuchira" rel="noopener" target="_blank">🚀 今すぐフォームに入力する</a>
+</div>
+<div class="hint">
+          🕒 <strong>所要時間の目安：</strong>フォーム入力1分 ／ 承認は通常48時間以内です。<br/>
+          ✅ 48時間以内に承認されない場合は、<strong>合言葉が間違っている可能性</strong>がございます。再度応募方法を見直していただくか、<a href="https://lin.ee/Ihkdimq" rel="noopener" target="_blank">公式LINE</a>へご連絡ください。
         </div>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://form.run/@hamuchira" target="_blank" rel="noopener">🚀 今すぐフォームに入力する</a>
+<div class="hint">
+          ⏰ <strong>応募締切：</strong>2025年12月31日（水）まで（会場確定・開催準備のため）<br/>
+          🔒 <strong>セキュリティ：</strong><a href="https://line.me/ti/g2/vedw-cLHaDm0TA3xCTqdLscQBiBDyJn9lM9czA?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: bold;" target="_blank">オープンチャット</a>参加には、フォーム送信完了画面に表示される合言葉が必要です。合言葉の二次配布はご遠慮ください。
         </div>
-        <div class="hint">
-          ⏰ <strong>応募締切：</strong>2025年12月31日（火）までにお願いします！<br>
-          🔒 <strong>セキュリティ：</strong><a href="https://line.me/ti/g2/vedw-cLHaDm0TA3xCTqdLscQBiBDyJn9lM9czA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; font-weight: bold;">オープンチャット</a>参加には、フォーム送信完了画面に表示される合言葉が必要です。合言葉の二次配布はご遠慮ください。
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="card">
-        <h2>お問い合わせ</h2>
-        <p style="font-size: 16px; margin-bottom: 20px;">
-          ご不明点があれば、公式LINEからお気軽にご連絡ください💌<br>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="card">
+<h2>お問い合わせ</h2>
+<p style="font-size: 16px; margin-bottom: 20px;">
+          ご不明点があれば、公式LINEからお気軽にご連絡ください💌<br/>
           友だち追加後に <strong style="color: var(--accent);">「オフ会問い合わせ」</strong> とメッセージしてください。
         </p>
-        <div class="cta">
-          <a class="btn btn-outline" href="https://lin.ee/Ihkdimq" target="_blank" rel="noopener">
+<div class="cta">
+<a class="btn btn-outline" href="https://lin.ee/Ihkdimq" rel="noopener" target="_blank">
             📱 公式LINEで問い合わせる
           </a>
-        </div>
-        <div class="hint">
+</div>
+<div class="hint">
           💬 公式LINEの応答設定を有効化しているため、個別チャットで対応できます。お気軽にどうぞ！
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="card">
-        <h2>よくある質問</h2>
-        <div class="faq-item">
-          <h3>🤔 ニックネームで参加して良いですか？</h3>
-          <p>もちろんです！オープンチャットは匿名参加OKです。フォームで入力したニックネームでご参加お願いします。</p>
-        </div>
-        <div class="faq-item">
-          <h3>📍 詳細な集合場所はいつわかりますか？</h3>
-          <p>承認後、オープンチャット内で参加者のみにご案内いたします。安心してお待ちください。</p>
-        </div>
-        <div class="faq-item">
-          <h3>👶 子どもは参加できますか？</h3>
-          <p>はい、大歓迎です！保護者さまご同伴の上、ご参加ください。</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
-
-  <footer>
-    <div class="container">
-      <p>© <span id="y"></span> <a href="https://www.youtube.com/@hamuchira" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">もっと！はむチラ長屋ch.</a></p>
-    </div>
-  </footer>
-
-  <script>
+</div>
+</section>
+<section class="section" id="faq">
+<div class="card">
+<h2>よくある質問</h2>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span class="q-badge">Q</span>
+<span class="q-text">🤔 ニックネームで参加して良いですか？</span>
+<span aria-hidden="true" class="q-toggle">＋</span>
+</button>
+<div class="faq-answer" hidden="">
+<div class="a-head"><span class="a-badge">A</span></div>
+<div class="a-body">
+<p>もちろんです！オープンチャットは匿名参加OKです。フォームで入力したニックネームでご参加お願いします。</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span class="q-badge">Q</span>
+<span class="q-text">📍 詳細な集合場所はいつわかりますか？</span>
+<span aria-hidden="true" class="q-toggle">＋</span>
+</button>
+<div class="faq-answer" hidden="">
+<div class="a-head"><span class="a-badge">A</span></div>
+<div class="a-body">
+<p>承認後、オープンチャット内で参加者のみにご案内いたします。安心してお待ちください。</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span class="q-badge">Q</span>
+<span class="q-text">👶 子どもは参加できますか？</span>
+<span aria-hidden="true" class="q-toggle">＋</span>
+</button>
+<div class="faq-answer" hidden="">
+<div class="a-head"><span class="a-badge">A</span></div>
+<div class="a-body">
+<p>はい、大歓迎です！保護者さまご同伴の上、ご参加ください。</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span class="q-badge">Q</span>
+<span class="q-text">⏱️ 途中参加・途中退室はできますか？</span>
+<span aria-hidden="true" class="q-toggle">＋</span>
+</button>
+<div class="faq-answer" hidden="">
+<div class="a-head"><span class="a-badge">A</span></div>
+<div class="a-body">
+<p>はい、問題ございません。ただし<strong>参加料の割引はございません</strong>。無理のない範囲でご参加ください。</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span class="q-badge">Q</span>
+<span class="q-text">💳 参加料の支払い方法は？</span>
+<span aria-hidden="true" class="q-toggle">＋</span>
+</button>
+<div class="faq-answer" hidden="">
+<div class="a-head"><span class="a-badge">A</span></div>
+<div class="a-body">
+<p>オフ会当日に、<strong>現金</strong>または<strong>PayPay</strong>でお支払いください。</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span class="q-badge">Q</span>
+<span class="q-text">🗓️ キャンセルはできますか？</span>
+<span aria-hidden="true" class="q-toggle">＋</span>
+</button>
+<div class="faq-answer" hidden="">
+<div class="a-head"><span class="a-badge">A</span></div>
+<div class="a-body">
+<p>お申込み後のキャンセルは可能です。<br/>
+          ただし、<strong>お店確定後は準備・手配の都合上、できる限りキャンセルはお控えいただけますと幸いです。</strong><br/>
+          体調不良等の場合は、<strong>当日の1週間～4日前くらいまで</strong>のキャンセルを目安にご相談ください（具体的な期日は、<strong>会場確定後にオープンチャットでご案内します</strong>）。<br/>
+          上記期間を過ぎてのキャンセルも可能ですが、<strong>参加料全額のご負担</strong>をお願いする場合がございます。ご理解・ご協力をお願いいたします。</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span class="q-badge">Q</span>
+<span class="q-text">🥗 アレルギー対応について</span>
+<span aria-hidden="true" class="q-toggle">＋</span>
+</button>
+<div class="faq-answer" hidden="">
+<div class="a-head"><span class="a-badge">A</span></div>
+<div class="a-body">
+<p><strong>参加申し込みフォームで事前に確認いたします。</strong>配慮が必要な食材や苦手なものがありましたら、参加お申込み時にフォームへご記入ください。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<button aria-label="ページ上部へ戻る" class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<!-- Sticky CTA (mobile) -->
+<div class="sticky-cta">
+<a class="btn btn-primary" href="https://form.run/@hamuchira" rel="noopener" target="_blank">🌟 参加申し込み</a>
+<a class="btn btn-outline" href="#howto">📖 参加方法</a>
+<a class="btn btn-outline" href="#faq">📚 よくある質問</a>
+</div>
+<style>
+.sticky-cta{
+  position:fixed; left:0; right:0; bottom:0;
+  display:flex; gap:8px;
+  padding:8px 12px calc(8px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top:1px solid var(--border-color);
+  z-index:9999;
+}
+.sticky-cta .btn{flex:1; padding:12px 16px}
+/* show on all widths for確認 */
+@media (max-width: 991px){ body{ padding-bottom: 76px } }
+</style>
+<footer>
+<div class="container">
+<p>© <span id="y"></span> <a href="https://www.youtube.com/@hamuchira" rel="noopener" style="color: var(--accent); text-decoration: none;" target="_blank">もっと！はむチラ長屋ch.</a></p>
+</div>
+</footer>
+<script>
     document.getElementById('y').textContent = new Date().getFullYear();
     
     window.addEventListener('scroll', function() {
@@ -612,5 +933,18 @@
       }
     });
   </script>
+<script>
+document.querySelectorAll('#faq .faq-question').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const item = btn.closest('.faq-item');
+    const ans = item.querySelector('.faq-answer');
+    const toggle = item.querySelector('.q-toggle');
+    const open = item.classList.toggle('open');
+    ans.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.textContent = open ? '－' : '＋';
+  });
+});
+</script>
 </body>
 </html>
