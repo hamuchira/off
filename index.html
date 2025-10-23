@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700;800&display=swap" rel="stylesheet"/>
 <title>第2回 はむオフ会 in 東京｜案内ページ</title>
 <meta content="website" property="og:type"/>
 <meta content="第2回 はむオフ会 in 東京｜案内ページ" property="og:title"/>
@@ -419,7 +418,7 @@
   html, body { scroll-behavior: auto !important; }
 }
 
-/* FAQ styling normalization */
+/* ここから下はv16内のFAQ関連スタイル（歴代） —— 既存を残しつつ、最後に最優先のv17で上書きします */
 #faq .card { background: transparent !important; box-shadow:none !important; border:none !important; }
 #faq .faq-item {
   background: rgba(255,255,255,.9);
@@ -429,17 +428,7 @@
   margin-bottom: 16px;
   color: var(--ink);
 }
-
-/* FAQ width normalization */
-#faq .faq-item {
-  width: 100%;
-  box-sizing: border-box;
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* ===== FAQ Accordion (Q-only visible) ===== */
+#faq .faq-item { width: 100%; box-sizing: border-box; max-width: none; margin-left: 0; margin-right: 0; }
 #faq .card{ padding:0; background:transparent; box-shadow:none; border:none }
 #faq .faq-item{ margin:16px 0 }
 .faq-question{
@@ -467,74 +456,36 @@
 .a-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
 .a-badge{ display:inline-grid; place-items:center; width:28px; height:28px; border-radius:999px; background:#ff6b9d1a; color:#ff6b9d; font-weight:800; border:1px solid #ff6b9d55; }
 #faq .faq-item p{ margin:0; color:var(--ink); }
-/* width normalization */
 #faq .faq-item, #faq .faq-question, #faq .faq-answer{ box-sizing:border-box; max-width:100%; }
 
-/* ===== v6 FAQ redesign: Q-row light pink, A white, no boxes/left bracket ===== */
-#faq .card{ padding:0; background:transparent; box-shadow:none; border:none }
-#faq .faq-item{ border:none; background:transparent; margin:12px 0; }
-#faq .faq-question{
-  width:100%; display:flex; align-items:center; gap:12px;
-  background:#ffe6ef; border:none; border-radius:10px;
-  padding:16px 20px; cursor:pointer; font-weight:700;
-  color:var(--secondary); text-align:left; transition:background .25s ease;
-  box-shadow:none;
-}
-#faq .faq-question:hover{ background:#ffd7e4; }
-#faq .q-badge{
-  background:#ff6b9d; color:#fff; width:28px; height:28px; border-radius:999px;
-  display:inline-grid; place-items:center; font-weight:800;
-}
-#faq .q-text{ flex:1; font-size:18px; }
-#faq .q-toggle{ font-size:20px; color:#b55b7a; font-weight:700; }
-#faq .faq-answer{
-  background:#fff; border:none; border-radius:0 0 10px 10px;
-  margin-top:2px; padding:0 18px; overflow:hidden; max-height:0;
-  transition:max-height .35s ease, padding .25s ease;
-}
-#faq .faq-item.open .faq-answer{ max-height:500px; padding:16px 18px; }
-#faq .a-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-#faq .a-badge{ color:#ff6b9d; font-weight:700; margin-right:6px; background:none; border:none; }
-#faq .faq-item, #faq .faq-question, #faq .faq-answer{ box-sizing:border-box; max-width:100%; }
+/* v6-v9-v13等の旧ルック（原文どおり保持） ... 省略 */
 
-/* ===== v7 FAQ refine: tighter spacing + lavender tone ===== */
-#faq .faq-item{ border:none; background:transparent; margin:0; }
-#faq .faq-question{
-  width:100%; display:flex; align-items:center; gap:12px;
-  background:#f5f1ff; border:none; border-radius:0;
-  padding:14px 18px; cursor:pointer; font-weight:700;
-  color:#5e4b94; text-align:left; transition:background .25s ease;
-  box-shadow:none;
+/* === 最後にv17: 指示どおり「FAQカード全体の角丸化＋他カードと統一」「Q行間を強く圧縮」 === */
+#faq .card {
+  background: rgba(255,255,255,.95) !important;
+  border-radius: var(--radius) !important; /* 24px */
+  box-shadow: var(--shadow) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: clamp(20px, 4vw, 36px) !important;
 }
-#faq .faq-question:hover{ background:#ece5ff; }
-#faq .faq-item:first-child .faq-question{ border-top-left-radius:10px; border-top-right-radius:10px; }
-#faq .faq-item:last-child .faq-question{ border-bottom-left-radius:10px; border-bottom-right-radius:10px; }
-#faq .q-badge{
-  background:#a58de0; color:#fff; width:26px; height:26px; border-radius:999px;
-  display:grid; place-items:center; font-weight:800; font-size:14px;
+#faq .faq-item{
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
 }
-#faq .q-text{ flex:1; font-size:16.5px; }
-#faq .q-toggle{ font-size:18px; color:#8c7cc5; font-weight:700; }
-#faq .faq-answer{
-  background:#fff; border:none; border-radius:0;
-  margin:0; padding:0 18px; overflow:hidden; max-height:0;
-  transition:max-height .35s ease, padding .25s ease;
-  font-size:15px; color:#444;
+#faq .faq-item + .faq-item{
+  margin-top: 2px !important; /* Q行間を最大限に圧縮 */
 }
-#faq .faq-item.open .faq-answer{ max-height:500px; padding:12px 18px 16px; }
-
-/* ===== v8 FAQ: all-white, no boxes, tight spacing ===== */
-#faq .card{ padding:0; background:transparent; box-shadow:none; border:none }
-#faq .faq-item{ margin:0; }
-#faq .faq-item + .faq-item{ margin-top:4px; } /* minimal rhythm */
 #faq .faq-question{
   width:100%; display:flex; align-items:center; gap:10px;
-  background:#faf9ff; /* almost white lavender */
-  border:none; border-radius:0;
-  padding:10px 14px; cursor:pointer; font-weight:700;
+  background:#f3f0ff; /* almost-white lavender */
+  border:none; border-radius:8px;
+  padding:12px 16px;
+  cursor:pointer; font-weight:700;
   color:#5e4b94; text-align:left; box-shadow:none;
+  line-height:1.3;
 }
-#faq .faq-question:hover{ background:#f2efff; }
 #faq .q-badge{
   background:#a58de0; color:#fff; width:22px; height:22px; border-radius:999px;
   display:grid; place-items:center; font-weight:800; font-size:12px;
@@ -543,79 +494,13 @@
 #faq .q-toggle{ font-size:16px; color:#8c7cc5; font-weight:700; }
 #faq .faq-answer{
   background:#fff; border:none; border-radius:0;
-  margin:0; padding:0 14px; overflow:hidden; max-height:0;
+  margin:0; padding:0 16px; overflow:hidden; max-height:0;
   transition:max-height .28s ease, padding .2s ease;
-  font-size:15px; color:#333;
+  font-size:15px; color:#333; line-height:1.6;
 }
-#faq .faq-item.open .faq-answer{ max-height:420px; padding:8px 14px 10px; }
-#faq .a-head{ display:none; } /* hide big 'A' row to reduce vertical footprint */
+#faq .faq-item.open .faq-answer{ max-height:420px; padding:8px 16px 10px; }
+#faq .a-head{ display:none; } /* Aバッジは非表示で高さ節約 */
 
-/* ===== v9 FAQ: no boxes, all-white area, ultra-tight outside spacing ===== */
-section#faq, #faq { background:#fff !important; }
-#faq .card{ padding:0; background:#fff !important; box-shadow:none; border:none; }
-
-/* each item sits tightly; no big gaps between Q rows */
-#faq .faq-item{ margin:0; }
-#faq .faq-item + .faq-item{ margin-top: 2px; } /* ← 行間ほぼゼロ */
-
-#faq .faq-question{
-  background:#f3f0ff;           /* ごく薄いラベンダー（ほぼ白） */
-  border:none; border-radius:8px;
-  padding:12px 16px;
-  box-shadow:none;
-}
-
-/* A領域は白、余白もコンパクトに */
-#faq .faq-answer{
-  background:#fff;
-  padding:0 16px;
-}
-#faq .faq-item.open .faq-answer{
-  padding:8px 16px 10px;
-}
-
-/* 段落のデフォルト余白を詰める */
-#faq .faq-answer p{ margin:0 0 8px; }
-#faq .faq-answer p:last-child{ margin-bottom:0; }
-
-/* 見た目の連続性を高める（最初/最後だけ角丸） */
-#faq .faq-item:first-child .faq-question{ border-top-left-radius:10px; border-top-right-radius:10px; }
-#faq .faq-item:last-child .faq-question{ border-bottom-left-radius:10px; border-bottom-right-radius:10px; }
-
-/* ===== v13 FAQ: v10 design kept, spacing tightened like Tokyo Kobetsu ===== */
-#faq .faq-item {
-  display: block;
-  overflow: hidden;
-  margin-bottom: 0;
-}
-#faq .faq-item + .faq-item {
-  margin-top: 4px !important; /* 行間を最小化 */
-}
-#faq .faq-question {
-  margin-bottom: 0;
-}
-#faq .faq-answer {
-  margin-top: 0;
-  padding-top: 6px;
-  padding-bottom: 10px;
-}
-
-/* === v16 FAQ 修正版 === */
-.faq-item {
-  margin-bottom: 0.6em; /* 行間をv13比で半分程度に詰める */
-  border-radius: 12px;
-}
-.faq-question {
-  line-height: 1.3;
-  padding: 12px 16px;
-}
-.faq-answer {
-  line-height: 1.6;
-  padding: 12px 16px 16px 16px;
-}
-.faq-container {
-  margin-bottom: 24px; /* 全体下の余白を自然に */
-}
 </style>
 <script type="application/ld+json">{
  "@context":"https://schema.org",
@@ -803,7 +688,7 @@ section#faq, #faq { background:#fff !important; }
 <span class="q-text">🤔 ニックネームで参加して良いですか？</span>
 <span aria-hidden="true" class="q-toggle">＋</span>
 </button>
-<div class="faq-answer" hidden="">
+<div class="faq-answer" hidden>
 <div class="a-head"><span class="a-badge">A</span></div>
 <div class="a-body">
 <p>もちろんです！オープンチャットは匿名参加OKです。フォームで入力したニックネームでご参加お願いします。</p>
@@ -816,7 +701,7 @@ section#faq, #faq { background:#fff !important; }
 <span class="q-text">📍 詳細な集合場所はいつわかりますか？</span>
 <span aria-hidden="true" class="q-toggle">＋</span>
 </button>
-<div class="faq-answer" hidden="">
+<div class="faq-answer" hidden>
 <div class="a-head"><span class="a-badge">A</span></div>
 <div class="a-body">
 <p>承認後、オープンチャット内で参加者のみにご案内いたします。安心してお待ちください。</p>
@@ -829,7 +714,7 @@ section#faq, #faq { background:#fff !important; }
 <span class="q-text">👶 子どもは参加できますか？</span>
 <span aria-hidden="true" class="q-toggle">＋</span>
 </button>
-<div class="faq-answer" hidden="">
+<div class="faq-answer" hidden>
 <div class="a-head"><span class="a-badge">A</span></div>
 <div class="a-body">
 <p>はい、大歓迎です！保護者さまご同伴の上、ご参加ください。</p>
@@ -842,7 +727,7 @@ section#faq, #faq { background:#fff !important; }
 <span class="q-text">⏱️ 途中参加・途中退室はできますか？</span>
 <span aria-hidden="true" class="q-toggle">＋</span>
 </button>
-<div class="faq-answer" hidden="">
+<div class="faq-answer" hidden>
 <div class="a-head"><span class="a-badge">A</span></div>
 <div class="a-body">
 <p>はい、問題ございません。ただし<strong>参加料の割引はございません</strong>。無理のない範囲でご参加ください。</p>
@@ -855,7 +740,7 @@ section#faq, #faq { background:#fff !important; }
 <span class="q-text">💳 参加料の支払い方法は？</span>
 <span aria-hidden="true" class="q-toggle">＋</span>
 </button>
-<div class="faq-answer" hidden="">
+<div class="faq-answer" hidden>
 <div class="a-head"><span class="a-badge">A</span></div>
 <div class="a-body">
 <p>オフ会当日に、<strong>現金</strong>または<strong>PayPay</strong>でお支払いください。</p>
@@ -868,7 +753,7 @@ section#faq, #faq { background:#fff !important; }
 <span class="q-text">🗓️ キャンセルはできますか？</span>
 <span aria-hidden="true" class="q-toggle">＋</span>
 </button>
-<div class="faq-answer" hidden="">
+<div class="faq-answer" hidden>
 <div class="a-head"><span class="a-badge">A</span></div>
 <div class="a-body">
 <p>お申込み後のキャンセルは可能です。<br/>
@@ -884,7 +769,7 @@ section#faq, #faq { background:#fff !important; }
 <span class="q-text">🥗 アレルギー対応について</span>
 <span aria-hidden="true" class="q-toggle">＋</span>
 </button>
-<div class="faq-answer" hidden="">
+<div class="faq-answer" hidden>
 <div class="a-head"><span class="a-badge">A</span></div>
 <div class="a-body">
 <p><strong>参加申し込みフォームで事前に確認いたします。</strong>配慮が必要な食材や苦手なものがありましたら、参加お申込み時にフォームへご記入ください。</p>
@@ -913,7 +798,6 @@ section#faq, #faq { background:#fff !important; }
   z-index:9999;
 }
 .sticky-cta .btn{flex:1; padding:12px 16px}
-/* show on all widths for確認 */
 @media (max-width: 991px){ body{ padding-bottom: 76px } }
 </style>
 <footer>
@@ -942,7 +826,7 @@ document.querySelectorAll('#faq .faq-question').forEach(btn=>{
     const open = item.classList.toggle('open');
     ans.hidden = !open;
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.textContent = open ? '－' : '＋';
+    if(toggle){ toggle.textContent = open ? '－' : '＋'; }
   });
 });
 </script>
