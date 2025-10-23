@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第2回 はむオフ会 in 東京｜案内ページ</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>【終了】第1回 はむオフ会 in 東京（2025年10月）｜開催レポート</title>
+  <meta name="description" content="2025年10月13日に開催されたハムスター好きのゆるオフ会の様子をご紹介。写真ギャラリーとオープニングムービーを公開中。" />
+  <!-- OGP -->
+  <meta property="og:title" content="【終了】第1回 はむオフ会 in 東京" />
+  <meta property="og:description" content="2025年10月13日開催のハムスター好きオフ会レポート" />
+  <meta property="og:type" content="website" />
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700;800&display=swap');
     
@@ -16,6 +22,8 @@
       --accent-strong:#ff3d7a;
       --accent-light:#ffb3d1;
       --secondary:#8e44ad;
+      --success:#2ecc71;
+      --warning:#f39c12;
       --ring: rgba(255,107,157,.4);
       --shadow:0 20px 60px rgba(255,107,157,.12);
       --shadow-strong:0 30px 80px rgba(255,107,157,.25);
@@ -23,7 +31,9 @@
       --border-color: rgba(255,107,157,.15);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
     
     html,body{
       height:100%;
@@ -32,7 +42,7 @@
     
     body{
       margin:0; 
-      font-family: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
       color:var(--ink); 
       background: var(--bg);
       background-attachment: fixed;
@@ -77,7 +87,8 @@
     header.hero{
       background: 
         radial-gradient(1400px 600px at 50% -200px, rgba(255,182,209,.3) 0%, transparent 50%),
-        radial-gradient(800px 300px at 20% -100px, rgba(255,107,157,.2) 0%, transparent 40%);
+        radial-gradient(800px 300px at 20% -100px, rgba(255,107,157,.2) 0%, transparent 40%),
+        radial-gradient(600px 200px at 80% -50px, rgba(142,68,173,.15) 0%, transparent 30%);
       position: relative;
       overflow: hidden;
     }
@@ -89,7 +100,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(255,255,255,.1) 50px, rgba(255,255,255,.1) 52px);
+      background: 
+        repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(255,255,255,.1) 50px, rgba(255,255,255,.1) 52px);
       pointer-events: none;
     }
     
@@ -100,6 +112,18 @@
       text-align:center;
       position: relative;
       z-index: 1;
+    }
+
+    .event-ended-badge {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+      color: white;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.2);
     }
 
     .event-badges {
@@ -123,17 +147,6 @@
       color: var(--secondary);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
-      animation: bounce 2s infinite;
-    }
-
-    .event-badge:nth-child(1) { animation-delay: 0s; }
-    .event-badge:nth-child(2) { animation-delay: 0.2s; }
-    .event-badge:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-8px); }
-      60% { transform: translateY(-4px); }
     }
     
     h1{
@@ -145,12 +158,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: titleGlow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes titleGlow {
-      from { filter: drop-shadow(0 0 20px rgba(255,107,157,.3)); }
-      to { filter: drop-shadow(0 0 30px rgba(255,107,157,.5)); }
+      text-shadow: 0 4px 20px rgba(255,107,157,.3);
     }
     
     .lead{
@@ -170,7 +178,7 @@
       backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
-      transition: all 0.4s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     } 
 
     .card::before {
@@ -201,17 +209,6 @@
     h2::before {
       content: '🐹';
       font-size: 1.2em;
-      animation: wiggle 2s ease-in-out infinite;
-    }
-
-    @keyframes wiggle {
-      0%, 7% { transform: rotateZ(0); }
-      15% { transform: rotateZ(-15deg); }
-      20% { transform: rotateZ(10deg); }
-      25% { transform: rotateZ(-10deg); }
-      30% { transform: rotateZ(6deg); }
-      35% { transform: rotateZ(-4deg); }
-      40%, 100% { transform: rotateZ(0); }
     }
     
     h3{
@@ -245,6 +242,12 @@
     .list li:first-child{
       border-top:none;
     }
+
+    .list li strong {
+      color: var(--secondary);
+      font-weight: 700;
+      min-width: 80px;
+    }
     
     .badge{
       display:inline-block; 
@@ -254,6 +257,7 @@
       color:#fff; 
       font-size:12px;
       font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0,0,0,.2);
       box-shadow: 0 4px 12px rgba(255,107,157,.3);
     }
 
@@ -265,13 +269,28 @@
       font-weight:700; 
       font-size: 16px;
       border:3px solid transparent;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
       text-align: center;
       box-shadow: 0 8px 25px rgba(255,107,157,.25);
     } 
 
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+    
     .btn:hover{
       transform: translateY(-3px) scale(1.05);
       box-shadow: 0 15px 35px rgba(255,107,157,.4);
@@ -283,17 +302,9 @@
       border-color: var(--accent-strong);
     }
     
-    .btn-outline{
-      background: rgba(255,255,255,.95);
-      color: var(--accent);
-      border-color: var(--accent);
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-outline:hover {
-      background: var(--accent);
-      color: white;
-    }
+    .btn-primary:hover{
+      background: linear-gradient(135deg, var(--accent-strong) 0%, var(--secondary) 100%);
+    } 
 
     .cta{
       display:flex; 
@@ -316,12 +327,24 @@
 
     .section{
       margin: 32px 0;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .info-grid {
       display: grid;
       gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .info-item {
@@ -344,12 +367,54 @@
       display: block;
     }
 
-    .faq-item {
-      margin-bottom: 24px;
-      padding: 20px;
-      background: rgba(255,107,157,.05);
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
       border-radius: 16px;
-      border-left: 4px solid var(--accent);
+      margin: 24px 0;
+      box-shadow: var(--shadow);
+      background: rgba(255,107,157,.05);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 16px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: rgba(255,107,157,.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     footer{
@@ -404,6 +469,10 @@
       .info-grid {
         grid-template-columns: 1fr;
       }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
@@ -416,10 +485,11 @@
 
   <header class="hero">
     <div class="container hero-inner">
+      <span class="event-ended-badge">📅 このイベントは終了しました</span>
       <div class="event-badges">
         <div class="event-badge">
           <span>🎉</span>
-          <span>第2回</span>
+          <span>第1回</span>
         </div>
         <div class="event-badge">
           <span>🗼</span>
@@ -434,159 +504,92 @@
       <p style="font-size: 16px; color: var(--secondary); font-weight: 600; margin: 8px 0 16px;">
         主催：<a href="https://www.youtube.com/@hamuchira" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 2px solid var(--accent);">もっと！はむチラ長屋ch.</a>
       </p>
-      <p class="lead">ハムスター＆はむチラ好きで集まって、ゆるくおしゃべりするオフ会です✨<br>ビンゴ大会もあります💕<br>参加はニックネームでOK！気軽にご参加ください♪</p>
-      <div style="background: rgba(142,68,173,.1); padding: 16px; border-radius: 12px; margin: 20px auto; max-width: 500px; border: 2px solid rgba(142,68,173,.3);">
-        <p style="margin: 0; font-size: 14px; color: var(--secondary); font-weight: 600;">
-          📺 <strong>「はむチラ」をまだご存知でない方は</strong><br>
-          <a href="https://www.youtube.com/@hamuchira" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: bold;">YouTubeチャンネル</a>をぜひチェックしてみてください！
-        </p>
-      </div>
+      <p class="lead">2025年10月13日に開催されたハムスター＆はむチラ好きのゆるオフ会✨<br>ビンゴ大会も大盛り上がりでした💕</p>
       <div class="cta">
-        <a class="btn btn-primary" href="https://form.run/@hamuchira" target="_blank" rel="noopener">🌟 参加申し込みフォームへ</a>
-        <a class="btn btn-outline" href="#howto">📖 参加方法を見る</a>
-      </div>
-      <div class="hint">
-        ✨ フォーム送信後に、<a href="https://line.me/ti/g2/vedw-cLHaDm0TA3xCTqdLscQBiBDyJn9lM9czA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" style="color: var(--accent); font-weight: bold; text-decoration: underline;">オープンチャット</a>にご参加ください（承認制）
+        <a class="btn btn-primary" href="/" >🌟 第2回オフ会の情報はこちら</a>
       </div>
     </div>
   </header>
 
   <main class="container">
+    <section class="section" id="event-report">
+      <div class="card">
+        <h2>イベントの様子</h2>
+        <p style="font-size: 16px; margin-bottom: 20px;">
+          たくさんのハムちゃん好きの方にご参加いただき、楽しいオフ会になりました！🐹✨
+        </p>
+        
+        <h3 style="margin-top: 32px;">📹 オープニングムービー</h3>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/1yGrjLVal0o?si=PrMdwBrjpBdFWr78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h3 style="margin-top: 32px;">📸 フォトギャラリー</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <!-- 画像1を追加: <img src="画像パス1" alt="オフ会の様子1"> -->
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--muted); font-size: 14px; text-align: center;">
+              画像1<br>追加予定
+            </div>
+          </div>
+          <div class="gallery-item">
+            <!-- 画像2を追加: <img src="画像パス2" alt="オフ会の様子2"> -->
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--muted); font-size: 14px; text-align: center;">
+              画像2<br>追加予定
+            </div>
+          </div>
+          <div class="gallery-item">
+            <!-- 画像3を追加: <img src="画像パス3" alt="オフ会の様子3"> -->
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--muted); font-size: 14px; text-align: center;">
+              画像3<br>追加予定
+            </div>
+          </div>
+          <div class="gallery-item">
+            <!-- 画像4を追加: <img src="画像パス4" alt="オフ会の様子4"> -->
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--muted); font-size: 14px; text-align: center;">
+              画像4<br>追加予定
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 14px; color: var(--muted); margin-top: 16px; text-align: center;">
+          ※ 参加者のプライバシーに配慮した写真を掲載しています
+        </p>
+      </div>
+    </section>
+
     <section class="section" id="about">
       <div class="card">
-        <h2>開催概要</h2>
+        <h2>開催概要（終了）</h2>
         <div class="info-grid">
           <div class="info-item">
             <span class="info-icon">📅</span>
             <strong>日付</strong><br>
-            2026年<span style="border-bottom:2px dotted var(--accent)"> 2月15日 </span>（日）
+            2025年10月13日（祝・月）
           </div>
           <div class="info-item">
             <span class="info-icon">🕐</span>
             <strong>時間</strong><br>
-            13:00 〜 予定
+            13:00 〜 16:00
           </div>
           <div class="info-item">
             <span class="info-icon">📍</span>
             <strong>場所</strong><br>
-            東京都内<br>
-            <small>（詳細は参加者のみ）</small>
+            東京都内
           </div>
           <div class="info-item">
             <span class="info-icon">💰</span>
             <strong>参加費</strong><br>
-            5,500円前後<br>
-            <small>（お店やプラン次第）</small>
+            5,500円
           </div>
-          <div class="info-item" style="background: rgba(255,107,157,.15); border: 2px solid var(--accent);">
+          <div class="info-item" style="background: rgba(149,165,166,.15); border: 2px solid #95a5a6;">
             <span class="info-icon">⏰</span>
-            <strong style="color: var(--accent);">応募締切</strong><br>
-            2025年12月31日（火）<br>
-            <small style="color: var(--accent); font-weight: 600;">お早めに！</small>
-          </div>
-          <div class="info-item" style="background: rgba(142,68,173,.1); border: 2px solid var(--secondary);">
-            <span class="info-icon">📷</span>
-            <strong style="color: var(--secondary);"><a href="off202510.html" style="color: var(--secondary); text-decoration: none;">過去のオフ会</a></strong><br>
-            <a href="off202510.html" style="color: var(--accent); text-decoration: none; font-weight: 600;">第1回の様子はこちら →</a>
+            <strong style="color: #7f8c8d;">応募締切</strong><br>
+            2025年10月8日（水）<br>
+            <small style="color: #7f8c8d; font-weight: 600;">終了しました</small>
           </div>
         </div>
         <div class="hint">
-          🍽️ <strong>飲食について：</strong>詳細は決まり次第お知らせします
-        </div>
-      </div>
-      
-      <div class="card" style="margin-top:20px;">
-        <h2>参加資格</h2>
-        <ul class="list">
-          <li>
-            <span>📺</span>
-            <div>
-              <strong>「もっと！はむチラ長屋ch.」をご存じの方</strong><br>
-              <small>チャンネルをご存知であればOKです</small>
-            </div>
-          </li>
-          <li>
-            <span>🐹</span>
-            <div>
-              <strong>ハムスター好きな方</strong><br>
-              <small>ハムちゃんへの愛があれば十分です！</small>
-            </div>
-          </li>
-        </ul>
-        
-        <h3 style="margin-top:24px; display: flex; align-items: center; gap: 8px;">
-          ⚠️ 参加時のお願い
-        </h3>
-        <ul class="list">
-          <li>
-            <span class="badge">年齢</span>
-            <div>
-              義務教育以下の方は<strong>保護者の方の同伴が必須</strong>です
-            </div>
-          </li>
-          <li>
-            <span class="badge">年齢</span>
-            <div>
-              高校生以上〜18歳未満の方は<strong>必ず保護者の方の了承を得てからご参加</strong>ください
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="howto">
-      <div class="card">
-        <h2>参加方法</h2>
-        <div style="background: rgba(255,107,157,.1); padding: 24px; border-radius: 16px; margin-bottom: 20px;">
-          <h3 style="margin-top: 0; color: var(--secondary);">📝 簡単3ステップ！</h3>
-          <ol style="font-size: 16px; line-height: 1.8;">
-            <li><strong>フォーム入力</strong> → <a href="https://form.run/@hamuchira" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: bold;">参加申し込みフォーム</a> に必要事項を入力</li>
-            <li><strong>オープンチャット参加</strong> → 送信完了画面に表示される<strong>オープンチャットURL</strong>から「参加申請」</li>
-            <li><strong>承認待ち</strong> → 主催がフォーム内容と照合し、承認後にオープンチャットで連絡・雑談スタート！</li>
-          </ol>
-        </div>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://form.run/@hamuchira" target="_blank" rel="noopener">🚀 今すぐフォームに入力する</a>
-        </div>
-        <div class="hint">
-          ⏰ <strong>応募締切：</strong>2025年12月31日（火）までにお願いします！<br>
-          🔒 <strong>セキュリティ：</strong>オープンチャットのURLはフォーム完了画面にのみ表示します。URLの二次配布はご遠慮ください。
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="card">
-        <h2>お問い合わせ</h2>
-        <p style="font-size: 16px; margin-bottom: 20px;">
-          ご不明点があれば、公式LINEからお気軽にご連絡ください💌<br>
-          友だち追加後に <strong style="color: var(--accent);">「オフ会問い合わせ」</strong> とメッセージしてください。
-        </p>
-        <div class="cta">
-          <a class="btn btn-outline" href="https://lin.ee/Ihkdimq" target="_blank" rel="noopener">
-            📱 公式LINEで問い合わせる
-          </a>
-        </div>
-        <div class="hint">
-          💬 公式LINEの応答設定を有効化しているため、個別チャットで対応できます。お気軽にどうぞ！
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="card">
-        <h2>よくある質問</h2>
-        <div class="faq-item">
-          <h3>🤔 ニックネームで参加して良いですか？</h3>
-          <p>もちろんです！オープンチャットは匿名参加OKです。フォームで入力したニックネームで照合いたします。</p>
-        </div>
-        <div class="faq-item">
-          <h3>📍 詳細な集合場所はいつわかりますか？</h3>
-          <p>承認後、オープンチャット内で参加者のみにご案内いたします。安心してお待ちください。</p>
-        </div>
-        <div class="faq-item">
-          <h3>👶 子どもは参加できますか？</h3>
-          <p>はい、大歓迎です！保護者さまご同伴の上、ご参加ください。</p>
+          🍽️ <strong>飲食について：</strong>半立食ビュッフェ（ソフトドリンク飲み放題付）
         </div>
       </div>
     </section>
@@ -610,6 +613,13 @@
       } else {
         scrollTop.classList.remove('visible');
       }
+    });
+
+    window.addEventListener('load', function() {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section, index) => {
+        section.style.animationDelay = `${index * 0.2}s`;
+      });
     });
   </script>
 </body>
